@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 import Sidebar from "./views/sidebar";
 import Shapes from "./views/shapes";
@@ -27,20 +27,28 @@ class App extends Component {
     const { shapes, selected } = this.state;
     return (
       <div className="app-container">
-        <header className="menu-container">
-          <Sidebar
-            shapes={shapes}
-            handlerOnClick={this.handlerOnClick}
-            selected={selected}
-          />
-        </header>
-        <section className="board-container">
-          <Shapes
-            shapes={shapes}
-            handlerOnClick={this.handlerOnClick}
-            selected={selected}
-          />
-        </section>
+        {shapes.length > 0 ? (
+          <Fragment>
+            <header className="menu-container">
+              <Sidebar
+                shapes={shapes}
+                handlerOnClick={this.handlerOnClick}
+                selected={selected}
+              />
+            </header>
+            <section className="board-container">
+              <Shapes
+                shapes={shapes}
+                handlerOnClick={this.handlerOnClick}
+                selected={selected}
+              />
+            </section>
+          </Fragment>
+        ) : (
+          <div className="loading-container">
+            <h3>Loading...</h3>
+          </div>
+        )}
       </div>
     );
   }

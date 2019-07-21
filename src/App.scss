@@ -41,7 +41,7 @@ $accessory-color: purple;
       button.selected {
         background: purple;
       }
-    
+
       button:hover {
         opacity: 0.5;
       }
@@ -51,27 +51,39 @@ $accessory-color: purple;
   .board-container {
     flex-grow: 5;
     background-color: white;
- 
+
     .shapes-container {
+      width: 100%;
+      height: 100%;
+
+      svg {
         width: 100%;
         height: 100%;
-      
-      polygon {
-        fill: $secondary-color;
-        stroke: $accessory-color;
-        stroke-width: 1;
-      }
+        polygon {
+          fill: $secondary-color;
+          stroke: $accessory-color;
+          stroke-width: 1;
+        }
 
-      polygon:hover {
-        fill-opacity: 0.5;
-      }
+        polygon:hover {
+          fill-opacity: 0.5;
+        }
 
-      polygon.selected {
-        fill: #581f63;
-        stroke: purple;
-        stroke-width: 1;
+        polygon.selected {
+          fill: #581f63;
+          stroke: purple;
+          stroke-width: 1;
+        }
       }
     }
+  }
+
+  .loading-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
   }
 
 
