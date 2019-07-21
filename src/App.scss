@@ -1,0 +1,28 @@
+.app-container{
+  display: flex;
+  height: 100vh;
+  align-items: stretch;
+  min-width: 320px;
+  min-height: 568px;
+
+  @media screen and (orientation:landscape) {
+    min-width: 568px;
+    min-height: 320px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .menu-container{
+    flex-grow: 1;
+    background-color: lightgrey; 
+  }
+  
+  .board-container{
+    flex-grow: 5;
+    background-color: white; 
+  }
+}
