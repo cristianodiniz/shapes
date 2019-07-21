@@ -1,20 +1,39 @@
-import React from 'react';
-import './App.scss';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="app-container">
-      <header className="menu-container">
-          <nav>
-          {"menu"}
-          </nav> 
-      </header>
-      <section className="board-container">
-        {"board"}
-      </section>
+import Sidebar from "./views/sidebar";
+import { getShapes } from "./services/shapesService";
 
-    </div>
-  );
+import "./App.scss";
+
+class App extends Component {
+  state = {
+    shapes: []
+  };
+
+  async componentDidMount() {
+    await this.updateShapes();
+  }
+
+  async updateShapes() {
+    const shapes = await getShapes();
+    this.setState({ ...this.state, shapes });
+  }
+ 
+  render() {
+    const {shapes} = this.state 
+    return (
+      <div className="app-container">
+        <header className="menu-container">
+          <Sidebar 
+            shapes = {shapes}
+          />
+        </header>
+        <section className="board-container">{"board"}</section>
+      </div>
+    );
+  }
+
+  
 }
 
 export default App;
