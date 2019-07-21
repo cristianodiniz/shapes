@@ -19,10 +19,26 @@
   .menu-container{
     flex-grow: 1;
     background-color: lightgrey; 
+    .sidebar-container {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      height: 100%;
+      padding: 16px;
+      
+      button {
+        padding: 16px;
+        font-size: medium;
+        margin-bottom: 8px;
+        border: 1px silver solid;
+      }
+    }
   }
   
   .board-container{
     flex-grow: 5;
     background-color: white; 
   }
+
+
 }
