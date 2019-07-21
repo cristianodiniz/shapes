@@ -62,6 +62,15 @@ $accessory-color: purple;
         stroke-width: 1;
       }
 
+      polygon:hover {
+        fill-opacity: 0.5;
+      }
+
+      polygon.selected {
+        fill: #581f63;
+        stroke: purple;
+        stroke-width: 1;
+      }
     }
   }
 

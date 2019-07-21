@@ -13,8 +13,8 @@ function Shapes(props) {
               <polygon
                 key={shape.id}
                 points={shape.coordinatesToPoints(700)}
-                className={selected === it.id ? "selected" : null}
-                onClick={handlerOnClick(it.id)}
+                className={selected === shape.id ? "selected" : null}
+                onClick={handlerOnClick(shape.id)}
               />
             ))}
         </svg>

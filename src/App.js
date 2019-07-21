@@ -35,7 +35,11 @@ class App extends Component {
           />
         </header>
         <section className="board-container">
-          <Shapes shapes={shapes} />
+          <Shapes
+            shapes={shapes}
+            handlerOnClick={this.handlerOnClick}
+            selected={selected}
+          />
         </section>
       </div>
     );
