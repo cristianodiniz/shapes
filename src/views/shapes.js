@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 function Shapes(props) {
   
-    const { shapes } = props;
+    const { shapes , selected,handlerOnClick} = props;
    
     return (
         <svg className="shapes-container" >
@@ -13,6 +13,8 @@ function Shapes(props) {
               <polygon
                 key={shape.id}
                 points={shape.coordinatesToPoints(700)}
+                className={selected === it.id ? "selected" : null}
+                onClick={handlerOnClick(it.id)}
               />
             ))}
         </svg>
@@ -22,6 +24,8 @@ function Shapes(props) {
 
 Shapes.propTypes = {
   shapes: PropTypes.array,
+  selected: PropTypes.number,
+  handlerOnClick: PropTypes.func
 };
 
 export default Shapes;
