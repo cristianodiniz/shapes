@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-function Sidebar({ shapes ,handlerOnClick}) {
+function Sidebar({ shapes, selected ,handlerOnClick}) {
   return (
     <header className="sidebar-container">
       {shapes.length > 0 &&
@@ -9,7 +9,7 @@ function Sidebar({ shapes ,handlerOnClick}) {
           <button
             className={selected === id ? "selected" : null}
             key={id}
-            onClick={handlerOnClick}
+            onClick={handlerOnClick(id)}
           >
             {name}
           </button>

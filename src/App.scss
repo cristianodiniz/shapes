@@ -37,6 +37,14 @@ $accessory-color: purple;
         margin-bottom: 8px;
         border: 1px silver solid;
       }
+
+      button.selected {
+        background: purple;
+      }
+    
+      button:hover {
+        opacity: 0.5;
+      }
     }
   }
 
