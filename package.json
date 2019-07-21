@@ -29,9 +29,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "mocha": "^5.2.0",
-    "nock": "^10.0.2"
   }
 }
