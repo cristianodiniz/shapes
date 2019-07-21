@@ -8,7 +8,8 @@ import "./App.scss";
 
 class App extends Component {
   state = {
-    shapes: []
+    shapes: [],
+    selected: null
   };
 
   async componentDidMount() {
@@ -20,15 +21,25 @@ class App extends Component {
     this.setState({ ...this.state, shapes });
   }
 
+  handlerOnClick = selected => () => this.setState({ ...this.state, selected });
+
   render() {
-    const { shapes } = this.state;
+    const { shapes, selected } = this.state;
     return (
       <div className="app-container">
         <header className="menu-container">
-          <Sidebar shapes={shapes} />
+          <Sidebar
+            shapes={shapes}
+            handlerOnClick={this.handlerOnClick}
+            selected={selected}
+          />
         </header>
         <section className="board-container">
-          <Shapes shapes={shapes} />
+          <Shapes
+            shapes={shapes}
+            handlerOnClick={this.handlerOnClick}
+            selected={selected}
+          />
         </section>
       </div>
     );
