@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import Sidebar from "./views/sidebar";
+import Shapes from "./views/shapes";
 import { getShapes } from "./services/shapesService";
 
 import "./App.scss";
@@ -18,22 +19,20 @@ class App extends Component {
     const shapes = await getShapes();
     this.setState({ ...this.state, shapes });
   }
- 
+
   render() {
-    const {shapes} = this.state 
+    const { shapes } = this.state;
     return (
       <div className="app-container">
         <header className="menu-container">
-          <Sidebar 
-            shapes = {shapes}
-          />
+          <Sidebar shapes={shapes} />
         </header>
-        <section className="board-container">{"board"}</section>
+        <section className="board-container">
+          <Shapes shapes={shapes} />
+        </section>
       </div>
     );
   }
-
-  
 }
 
 export default App;
