@@ -6,6 +6,10 @@ export class Shape{
         this.name = `Zone  ${id+1}`
         this.coordinates = coordinates
     }
+    
+    coordinatesToPoints(dimension){
+       return this.coordinates.map(it => [it[0] * dimension, it[1] * dimension]).join(" ")
+    }
 }
 
 export const getShapes = async () => {
