@@ -1,3 +1,21 @@
+# Shape React App Example
+
+This project is a simple example of ReactJS.
+
+![](https://raw.githubusercontent.com/cristianodiniz/shapes/master/img/Screen-Shot-1.png)
+
+
+## Requirements
+- node js instaled
+- npm instaled
+
+## How install
+* install all project dependencies with `npm install`
+* start the development server with `npm start`
+* The project will run on http://localhost:3000
+
+
+___
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
